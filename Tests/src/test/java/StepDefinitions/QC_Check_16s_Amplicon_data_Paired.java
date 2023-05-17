@@ -7,16 +7,16 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 import javax.imageio.ImageIO;
-import ru.yandex.qatools.ashot.AShot;
-import ru.yandex.qatools.ashot.Screenshot;
-import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
+//import ru.yandex.qatools.ashot.AShot;
+//import ru.yandex.qatools.ashot.Screenshot;
+//import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 import java.util.ArrayList;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.apache.commons.io.FileUtils;
-import com.mongodb.MapReduceCommand.OutputType;
+
 import org.openqa.selenium.TakesScreenshot;
 import Utilities.TestContextSetUp;
 import io.cucumber.java.en.And;
@@ -117,7 +117,7 @@ public class QC_Check_16s_Amplicon_data_Paired {
 		boolean opengmail=gm.gmaillogin(jobid);
 
 		if(opengmail==false) {
-			String subject="Nephele - Emails are not received within wait Time of 5 minutes in the script - Check bcbbnepheletset@gmail.com inbox manually";
+			/*String subject="Nephele - Emails are not received within wait Time of 5 minutes in the script - Check bcbbnepheletset@gmail.com inbox manually";
 			Screenshot screenshot=new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(submission.driver);
 			ImageIO.write(screenshot.getImage(),"PNG",new File(imageLocation));
 			sendemail email=new sendemail();
@@ -126,13 +126,13 @@ public class QC_Check_16s_Amplicon_data_Paired {
 			String txt = "<a href=\"+url+\">url</a>"; 
 			String htmltxt= htmlprev1+htmlprev2+txt+"<table  border= 1  style=\"width:100%\"><tr><th>Test Objective </th><th>GitHubActions - workflow </th><tr><td>Submit paired FASTQ files for 16S Amplicon Data ,validate job submisiion and emails received</td> <td>bcbb/NepheleAutomationTests/.github/workflows/RegressionTests.yml </td></table><p><b>Screenshot</b></p><table border=1 style=\"width:100%\"><tr><td><img src=\"cid:image\"></td></tr></table><br><p>Thanks,<br>Nepehele Testing Team";
 			email.sendemailsnotofications(htmltxt,subject,imageLocation);
-			email=null;
+			email=null;*/
 		}
 
 		gm.gmaillogin(jobid);
 
 		if(gm.checkemail1==false || gm.checkemail2==false) {
-			String subject="Nephele - Emails are not received as expected";
+			/*String subject="Nephele - Emails are not received as expected";
 			Screenshot screenshot=new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(submission.driver);
 			ImageIO.write(screenshot.getImage(),"PNG",new File(imageLocation));
 			sendemail email=new sendemail();
@@ -141,4 +141,4 @@ public class QC_Check_16s_Amplicon_data_Paired {
 			String txt = "<a href=\"+url+\">url</a>"; 
 			String htmltxt= htmlprev1+htmlprev2+txt+"<table  border= 1  style=\"width:100%\"><tr><th>Test Objective </th><th>GitHubActions - workflow </th><tr><td>Submit paired FASTQ files for 16S Amplicon Data ,validate job submisiion and emails received</td> <td>bcbb/NepheleAutomationTests/.github/workflows/RegressionTests.yml</td></table><p><b>Screenshot</b></p><table border=1 style=\"width:100%\"><tr><td><img src=\"cid:image\"></td></tr></table><br><p>Thanks,<br>Nepehele Testing Team";
 			email.sendemailsnotofications(htmltxt,subject,imageLocation);
-			email=null; }}}
+			email=null; */}}}
