@@ -86,7 +86,7 @@ public class QC_Check_16s_Amplicon_data_Paired {
 		succesfulsubmissionpage submission=testsetup.pageobjectmanager.validate(testsetup.testbase.webmanager());
 		boolean b=submission.validatemsg();
 		if(b==false) {
-			String subject="Nephele - Submission Success Message - "+"Not displayed as Expected";
+			/*String subject="Nephele - Submission Success Message - "+"Not displayed as Expected";
 			Screenshot screenshot=new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(submission.driver);
 			ImageIO.write(screenshot.getImage(),"PNG",new File(imageLocation));
 			sendemail email=new sendemail();
@@ -95,7 +95,7 @@ public class QC_Check_16s_Amplicon_data_Paired {
 			String txt = "<a href=\"+url+\">url</a>"; 
 			String htmltxt= txt+htmlprev1+htmlprev2+"<table  border= 1  style=\"width:100%\"><tr><th>Test Frequency </th><th>GoCD Pipeline</th><tr><td>Nepehele Pipeline  Tests</td> <td>Nephele_Testing/Tests</td></table><p><b>Screenshot</b></p><table border=1 style=\"width:100%\"><tr><td><img src=\"cid:image\"></td></tr></table><br><p>Thanks,<br>Nepehele Testing Team";
 			email.sendemailsnotofications(htmltxt,subject,imageLocation);
-			email=null;}
+			email=null;*/}
 		System.out.println(b);}
 
 	@And("job submission and job completion email must be sent to Registered email address for the job submission")
