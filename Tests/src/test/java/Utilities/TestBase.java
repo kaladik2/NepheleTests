@@ -46,7 +46,7 @@ public class TestBase {
 				//driver = new ChromeDriver();
 				ChromeOptions chromeoptions=new ChromeOptions();
 		chromeoptions.setHeadless(true);
-		driver=new RemoteWebDriver(new URL("http://hub:4444/wd/hub"),chromeoptions);}
+		driver=new RemoteWebDriver(new URL("http://localhost:4444/"),chromeoptions);}
 			driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 			driver.manage().window().maximize();
 			driver.get(url);
