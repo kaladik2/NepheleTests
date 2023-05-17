@@ -1,0 +1,36 @@
+name: Nephele Test to Submit paired FASTQ files for 16S Amplicon Data
+on: workflow_dispatch
+
+jobs:
+  NepheleJobSubmission:
+
+    runs-on: ubuntu-latest
+    defaults:
+       run:
+      #  folder working directory.
+        working-directory: NepheleTests
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: maven
+    - name: start selenium docker grid set up to submit jobs in Nephele
+      run: docker-compose -f "docker-compose.yaml" up -d
+    
+    - name: Run Tests
+      run: mvn clean test
+      
+    - name: JoSubmissionTestResults
+      if: success() || failure()
+      uses: actions/upload-artifact@v3
+      with:
+          name: JobSubmissionResults
+          path: |
+           NepheleTests/target/cucumber.html
+           NepheleTests/outputResults
+ 
+      
+
