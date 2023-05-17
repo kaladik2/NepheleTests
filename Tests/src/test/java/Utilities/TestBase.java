@@ -19,25 +19,17 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.remote.LocalFileDetector;
 public class TestBase {
 
-	public RemoteWebDriver driver;
+	public   RemoteWebDriver driver;
 	public String url="";
 	public String browsername="";
-	public String email="";
+
 
 	public RemoteWebDriver webmanager() throws IOException,InterruptedException{
-
-         getprop gp=new getprop();
-	     Properties prop=new Properties();
-	     prop=gp.get();
-		
-		
+		FileInputStream fis=new FileInputStream("src/test/resources/Global.properties");
+		Properties prop=new Properties();
+		prop.load(fis);
 		browsername=prop.getProperty("browser");
-		url=prop.getProperty("testurl"); 
-		email=prop.getProperty("testemail");
-		System.out.println("From Test Base");
-		System.out.println(browsername);
-		System.out.println(url);
-
+		url=prop.getProperty("testurl");
 
 		if(driver==null ) {
 			if(browsername.equalsIgnoreCase("chrome")){
