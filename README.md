@@ -41,6 +41,7 @@ Submit paired FASTQ files for 16S Amplicon Data
 
 
 src/test/resources/features - all the cucumber features files (files .feature ext) goes here.
+
 src/test/java/userStepDefinition - step defintion under this package for feature steps.
 
 Running test
