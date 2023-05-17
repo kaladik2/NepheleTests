@@ -16,29 +16,37 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import java.util.concurrent.TimeUnit;
-import org.openqa.selenium.remote.LocalFileDetector;
+import Utilities.getprop;
 public class TestBase {
 
-	public  RemoteWebDriver driver;
+	public RemoteWebDriver driver;
 	public String url="";
 	public String browsername="";
-
+	public String email="";
 
 	public RemoteWebDriver webmanager() throws IOException,InterruptedException{
-		FileInputStream fis=new FileInputStream("src/test/resources/Global.properties");
-		Properties prop=new Properties();
-		prop.load(fis);
+
+         getprop gp=new getprop();
+	     Properties prop=new Properties();
+	     prop=gp.get();
+		
+		
 		browsername=prop.getProperty("browser");
-		url=prop.getProperty("testurl");
+		url=prop.getProperty("testurl"); 
+		email=prop.getProperty("testemail");
+		System.out.println("From Test Base");
+		System.out.println(browsername);
+		System.out.println(url);
+
 
 		if(driver==null ) {
+
 			if(browsername.equalsIgnoreCase("chrome")){
 				//WebDriverManager.chromedriver().setup(); 
 				//driver = new ChromeDriver();
 				ChromeOptions chromeoptions=new ChromeOptions();
 		chromeoptions.setHeadless(true);
-		driver=new RemoteWebDriver(new URL("http://localhost:4444/"),chromeoptions);}
-		driver.setFileDetector(new LocalFileDetector());
+		driver=new RemoteWebDriver(new URL("http://hub:4444/wd/hub"),chromeoptions);}
 			driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 			driver.manage().window().maximize();
 			driver.get(url);
