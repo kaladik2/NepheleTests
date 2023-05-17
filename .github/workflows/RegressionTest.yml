@@ -8,7 +8,7 @@ jobs:
     defaults:
        run:
       #  folder working directory.
-        working-directory: NepheleTests
+        working-directory: Tests
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 17
