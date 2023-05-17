@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.remote.LocalFileDetector;
 public class TestBase {
 
-	public   RemoteWebDriver driver;
+	public  RemoteWebDriver driver;
 	public String url="";
 	public String browsername="";
 
