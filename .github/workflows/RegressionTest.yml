@@ -29,8 +29,8 @@ jobs:
       with:
           name: JobSubmissionResults
           path: |
-           NepheleTests/target/cucumber.html
-           NepheleTests/outputResults
+            Tests/target/cucumber.html
+            Tests/outputResults
  
       
 
