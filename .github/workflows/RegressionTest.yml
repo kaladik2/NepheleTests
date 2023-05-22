@@ -34,7 +34,7 @@ jobs:
  
     - name: send Email if Test(s) fail
       if:   failure()
-      uses: dawidd6/action-send-mail@v2
+      uses: dawidd6/action-send-mail@v3
       with:
     # mail server settings
        server_address: smtp.gmail.com
