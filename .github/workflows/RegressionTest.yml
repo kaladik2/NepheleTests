@@ -50,7 +50,5 @@ jobs:
        to: krishnavenikaladi@gmail.com,krishnaveni.kaladi@nih.gov
     # from email name
        from: TestingTeam
-       attachments:  Tests/outputResults,Tests/target/cucumber.html
-    # Optional priority: 'high', 'normal' (default) or 'low'
-       priority: medium
+    
 
